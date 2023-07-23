@@ -13,12 +13,15 @@ pipeline {
         stage('checkout') {
             steps {
                 script {
-                    echo "checkout begin"
                     sh "ls -al" // Print the contents of the current directory for debugging purposes
+                    /*
                     dir("terraform") {
                         sh "pwd" // Print the current working directory for debugging purposes
                         git "https://github.com/sudhakar-avula/terraform-s3-bucket.git"
                     }
+                    */
+                    echo "checkout begin"
+                    git "https://github.com/sudhakar-avula/terraform-s3-bucket.git"
                     echo "checkout end"
                 }
             }
@@ -27,10 +30,15 @@ pipeline {
         stage('Plan') {
             steps {
                 echo "Plan begin"
+                /*
                 sh 'pwd;cd terraform/ ; terraform init'
                 sh "pwd;cd terraform/ ; terraform plan -out tfplan"
                 sh 'pwd;cd terraform/ ; terraform show -no-color tfplan > tfplan.txt'
-                echo "Plan begin"
+                */
+                sh 'terraform init'
+                sh "terraform plan -out tfplan"
+                sh 'terraform show -no-color tfplan > tfplan.txt'
+                echo "Plan end"
             }
         }
         stage('Approval') {
