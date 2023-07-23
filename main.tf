@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "my-s3-bucket" {
-    bucket = "s3-asr-terraform-first-project"
+    bucket = "s3-asr-terraform-first-project-0236"
     acl = "private"
 
     tags = {
