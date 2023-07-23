@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "my-s3-bucket" {
 }
 
 resource "aws_s3_bucket_ownership_controls" "s3_bucket_acl_ownership" {
-  bucket = aws_s3_bucket.example.id
+  bucket = aws_s3_bucket.my-s3-bucket.id
   rule {
     object_ownership = "BucketOwnerPreferred"
   }
