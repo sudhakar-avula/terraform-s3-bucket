@@ -31,7 +31,7 @@ pipeline {
                     sh "pwd" // Print the current working directory for debugging purposes
                     sh "cd terraform/"
                     echo "Current directory AFTER sh command"
-                    sh "pwd" // Print the current working directory for debugging purposes
+                    sh "ls -al" // Print the contents of the current directory for debugging purposes
                     echo "terraform repo checkout success!"
                 }
             }
