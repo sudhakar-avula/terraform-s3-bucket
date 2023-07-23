@@ -29,7 +29,9 @@ pipeline {
                 script {
                     echo "Plan begin, current directory before sh command"
                     sh "pwd" // Print the current working directory for debugging purposes
-                    sh "cd terraform/"
+                    dir("terraform") {
+                        sh "pwd" // Print the current working directory for debugging purposes
+                    }
                     echo "Current directory AFTER sh command"
                     sh "pwd" // Print the contents of the current directory for debugging purposes
                     echo "terraform repo checkout success!"
