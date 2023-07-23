@@ -22,6 +22,7 @@ pipeline {
                     echo "checkout end"
                 }
             }
+        }
 
         stage('Plan') {
             steps {
