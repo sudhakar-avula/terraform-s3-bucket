@@ -56,7 +56,10 @@ pipeline {
         stage('Apply') {
             steps {
                echo "Apply begin"
-                sh "pwd;cd terraform/ ; terraform apply -input=false tfplan"
+                    dir("terraform") {
+                        sh "pwd" // Print the current working directory for debugging purposes
+                        sh "terraform apply -input=false tfplan"
+                    }
                echo "Apply end"
             }
         }
