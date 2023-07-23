@@ -14,19 +14,16 @@ pipeline {
             steps {
                 script {
                     sh "ls -al" // Print the contents of the current directory for debugging purposes
-                    /*
+                    echo "Git clone begin"
                     dir("terraform") {
                         sh "pwd" // Print the current working directory for debugging purposes
-                        git "https://github.com/sudhakar-avula/terraform-s3-bucket.git"
+                        git branch: 'main', url: 'https://github.com/sudhakar-avula/terraform-s3-bucket.git'
                     }
-                    */
-                    echo "checkout begin"
-                    git branch: 'main', url: 'https://github.com/sudhakar-avula/terraform-s3-bucket.git'
-                    echo "checkout end"
+                    echo "Git clone successful!"
                 }
             }
         }
-
+    /*
         stage('Plan') {
             steps {
                 echo "Plan begin"
@@ -64,6 +61,7 @@ pipeline {
                echo "Apply end"
             }
         }
+    */
     }
 
   }
