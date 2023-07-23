@@ -21,7 +21,7 @@ pipeline {
                     }
                     */
                     echo "checkout begin"
-                    git "https://github.com/sudhakar-avula/terraform-s3-bucket.git"
+                    git branch: 'main', url: 'https://github.com/sudhakar-avula/terraform-s3-bucket.git'
                     echo "checkout end"
                 }
             }
