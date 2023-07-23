@@ -30,6 +30,7 @@ pipeline {
                     dir("terraform") {
                         sh "pwd" // Print the current working directory for debugging purposes
                         sh 'terraform init'
+                         sh "terraform plan -out tfplan"
                     }
                     echo "terraform repo checkout success!"
                 }
